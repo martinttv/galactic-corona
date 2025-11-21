@@ -1,0 +1,218 @@
+:root {
+    --bg-color: #0a0a12;
+    --grid-bg: #11111a;
+    --wall-color: #2a2a35;
+    --wall-border: #3b3b4f;
+    --pacman-color: #ffe600;
+    --ghost-red: #ff0055;
+    --ghost-cyan: #00ffff;
+    --ghost-pink: #ffb8ff;
+    --ghost-orange: #ffb852;
+    --pellet-color: #ffb8ae;
+    --power-pellet-color: #fff;
+    --text-color: #ffffff;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.header {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    color: var(--pacman-color);
+    text-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    background-color: var(--grid-bg);
+    border: 2px solid var(--wall-border);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Grid template columns/rows will be set in JS */
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wall {
+    background-color: var(--wall-color);
+    border: 1px solid var(--wall-border);
+    border-radius: 2px;
+}
+
+.pellet {
+    width: 4px;
+    height: 4px;
+    background-color: var(--pellet-color);
+    border-radius: 50%;
+    box-shadow: 0 0 2px var(--pellet-color);
+}
+
+.power-pellet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--power-pellet-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--power-pellet-color);
+    animation: pulse 1s infinite alternate;
+}
+
+.pacman {
+    width: 16px;
+    height: 16px;
+    background-color: var(--pacman-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--pacman-color);
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.ghost {
+    width: 16px;
+    height: 16px;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    z-index: 9;
+    box-shadow: 0 0 5px currentColor;
+}
+
+.ghost.red {
+    color: var(--ghost-red);
+    background-color: var(--ghost-red);
+}
+
+.ghost.cyan {
+    color: var(--ghost-cyan);
+    background-color: var(--ghost-cyan);
+}
+
+.ghost.pink {
+    color: var(--ghost-pink);
+    background-color: var(--ghost-pink);
+}
+
+.ghost.orange {
+    color: var(--ghost-orange);
+    background-color: var(--ghost-orange);
+}
+
+.ghost.scared {
+    background-color: #0000ff;
+    color: #0000ff;
+}
+
+.controls-hint {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--grid-bg);
+    padding: 40px;
+    border: 2px solid var(--pacman-color);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 230, 0, 0.2);
+}
+
+.modal-content h2 {
+    color: var(--pacman-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: var(--pacman-color);
+    color: #000;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--pacman-color);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
