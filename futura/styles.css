@@ -129,16 +129,42 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 80px;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
 }
 
-.hero-content {
-    width: 50%;
-    z-index: 2;
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: var(--color-primary);
 }
 
 .hero-image {
