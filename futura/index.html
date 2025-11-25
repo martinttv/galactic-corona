@@ -29,9 +29,14 @@
                     <span>FUTURA INNOVATION</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#tech">Our Tech</a>
-                    <a href="#portal">Patient Portal</a>
-                    <a href="#resources">Tremor Resources</a>
+                    <a href="#tech" data-i18n="nav_tech">Our Tech</a>
+                    <a href="#portal" data-i18n="nav_portal">Patient Portal</a>
+                    <a href="#resources" data-i18n="nav_resources">Tremor Resources</a>
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+                        <span style="color: rgba(255,255,255,0.3)">|</span>
+                        <button class="lang-btn" onclick="changeLanguage('bg')">BG</button>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -42,10 +47,11 @@
         <div class="hero-image"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Reclaiming Stillness Through Innovation</h1>
-                <p class="hero-subtext">Advanced neuro-haptic solutions for managing hand tremors. Experience the future
+                <h1 data-i18n="hero_title">Reclaiming Stillness Through Innovation</h1>
+                <p class="hero-subtext" data-i18n="hero_subtext">Advanced neuro-haptic solutions for managing hand
+                    tremors. Experience the future
                     of stability.</p>
-                <a href="#learn-more" class="btn btn-primary">Discover Our Tech</a>
+                <a href="#learn-more" class="btn btn-primary" data-i18n="hero_cta">Discover Our Tech</a>
             </div>
         </div>
     </section>
@@ -56,15 +62,17 @@
             <div class="glass-panel">
                 <div class="split-panel">
                     <div class="tech-visual">
-                        <h2>The Future of Steadiness</h2>
-                        <p>Our flagship adaptive gyro-stabilization technology counteracts involuntary movements in
+                        <h2 data-i18n="tech_title">The Future of Steadiness</h2>
+                        <p data-i18n="tech_desc">Our flagship adaptive gyro-stabilization technology counteracts
+                            involuntary movements in
                             real-time.</p>
                         <img src="assets/product_render.png" alt="Deconstructed wearable device showing microchips">
                     </div>
                     <div class="lab-visual">
                         <img src="assets/scientists_lab.png" alt="Scientists in R&D lab">
-                        <h3>Research First</h3>
-                        <p>Backed by years of clinical research and developed by a diverse team of neuroscientists and
+                        <h3 data-i18n="research_title">Research First</h3>
+                        <p data-i18n="research_desc">Backed by years of clinical research and developed by a diverse
+                            team of neuroscientists and
                             engineers.</p>
                     </div>
                 </div>
@@ -76,38 +84,314 @@
     <section id="portal" class="survey-section">
         <div class="container survey-container">
             <div class="glass-panel">
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <p style="text-align: right; font-size: 0.9rem; margin-top: -1.5rem; margin-bottom: 2rem;">Step 2 of 4
-                </p>
+                <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="survey_title">Patient Intake Form</h2>
 
-                <h2 style="text-align: center; margin-bottom: 3rem;">YOUR VOICE MATTERS: Patient Insights Survey</h2>
-
-                <div class="survey-question">
-                    <h3>How often do you experience tremors?</h3>
-                    <div class="survey-options">
-                        <div class="survey-btn">Rarely</div>
-                        <div class="survey-btn active">Sometimes</div>
-                        <div class="survey-btn">Often</div>
-                    </div>
-                </div>
-
-                <div class="survey-question">
-                    <h3>Symptom Severity</h3>
-                    <div class="slider-container">
-                        <input type="range" min="1" max="10" value="5" class="slider">
-                        <div
-                            style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-text-muted);">
-                            <span>Mild</span>
-                            <span>Severe</span>
+                <form class="survey-form">
+                    <div class="form-header">
+                        <div class="form-group">
+                            <label class="form-label" data-i18n="label_name">Patient Name</label>
+                            <input type="text" class="form-input" placeholder="Enter your full name"
+                                data-i18n="placeholder_name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-i18n="label_date">Date</label>
+                            <input type="date" class="form-input">
                         </div>
                     </div>
-                </div>
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button class="btn btn-primary">Continue</button>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q1">1. When did you first notice the tremor, and has it
+                            changed over time?</label>
+                        <textarea class="form-textarea" rows="3" placeholder="Describe your experience..."
+                            data-i18n="placeholder_q1"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q2">2. Does the shaking occur when your hands are
+                            completely relaxed (at rest), or does it start/worsen when you try to perform an
+                            action?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q2" value="rest">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q2_opt1">Mostly when hands are relaxed (at rest)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q2" value="action">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q2_opt2">Mostly when I use my hands (reaching, holding, writing)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q2" value="both">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q2_opt3">Both</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q3">3. Does the tremor affect both hands?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q3" value="both_equal">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q3_opt1">Yes, both hands equally</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q3" value="one_worse">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q3_opt2">Yes, but one is worse than the other</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q3" value="one_only">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q3_opt3">No, only one hand</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q4">4. Do you have any blood relatives who also suffer from
+                            hand tremors?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q4" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q4_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q4" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q4_opt2">No</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q4" value="unknown">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q4_opt3">I don't know</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q5">5. Have you noticed if the tremor temporarily decreases
+                            after consuming a small amount of alcohol?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q5" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q5_opt1">Yes, it improves</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q5" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q5_opt2">No, no change</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q5" value="na">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q5_opt3">I do not drink alcohol</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q6">6. Which daily activities are most difficult for you?
+                            (Check all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6" value="eating">
+                                <span class="checkbox-custom"></span>
+                                <span data-i18n="q6_opt1">Eating (using a spoon/fork)</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6" value="drinking">
+                                <span class="checkbox-custom"></span>
+                                <span data-i18n="q6_opt2">Drinking from a cup</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6" value="writing">
+                                <span class="checkbox-custom"></span>
+                                <span data-i18n="q6_opt3">Writing</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6" value="phone">
+                                <span class="checkbox-custom"></span>
+                                <span data-i18n="q6_opt4">Using a phone/keyboard</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6" value="buttons">
+                                <span class="checkbox-custom"></span>
+                                <span data-i18n="q6_opt5">Buttoning clothes/tying shoelaces</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q7">7. Do you have an implanted pacemaker, cardiac
+                            defibrillator (ICD), or any other active electronic device in your body?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q7" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q7_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q7_opt2">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q8">8. Do you suffer from epilepsy, or have you ever had
+                            seizures in the past?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q8" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q8_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q8_opt2">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q9">9. Do you have any metal implants (plates, pins,
+                            shrapnel) in your wrist or forearm area?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q9" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q9_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q9_opt2">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q10">10. Do you have any open wounds, skin inflammation,
+                            eczema, or recent scars in the wrist area?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q10" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q10_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q10_opt2">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q11">11. Are you currently pregnant?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q11" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q11_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q11_opt2">No</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11" value="na">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q11_opt3">N/A (Male)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q12">12. Do you have reduced sensitivity (numbness or lack
+                            of feeling) in the skin of your hands?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q12" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q12_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q12_opt2">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q13">13. Where do you feel the tremor most
+                            intensely?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q13" value="fingers_wrist">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q13_opt1">Fingers and Wrist</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q13" value="arm_shoulder">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q13_opt2">Whole arm and Shoulder</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q13" value="head_voice">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q13_opt3">Head or Voice</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q14">14. Do you tolerate the sensation of slight vibration
+                            or "tingling" on your skin well?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q14" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q14_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q14" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q14_opt2">No / I have sensitive skin</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="q15">15. Will you be able to put on and tighten a bracelet
+                            on your wrist by yourself?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="q15" value="yes">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q15_opt1">Yes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q15" value="no">
+                                <span class="radio-custom"></span>
+                                <span data-i18n="q15_opt2">No, I will need assistance</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <button type="submit" class="btn btn-primary" data-i18n="submit_btn">Submit Survey</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -115,33 +399,33 @@
     <!-- Section 3: Understanding Tremors -->
     <section id="resources" class="education-section">
         <div class="container">
-            <h2 style="text-align: center;">UNDERSTANDING HAND TREMORS</h2>
+            <h2 style="text-align: center;" data-i18n="resources_title">UNDERSTANDING HAND TREMORS</h2>
             <div class="info-grid">
                 <div class="glass-panel info-card">
                     <img src="assets/tremor_types.png" alt="Illustration of hand tremor types">
-                    <h3>Types of Tremors</h3>
+                    <h3 data-i18n="tremor_types">Types of Tremors</h3>
                     <ul>
-                        <li>Essential Tremor</li>
-                        <li>Parkinsonian Tremor</li>
-                        <li>Dystonic Tremor</li>
+                        <li data-i18n="tremor_list1">Essential Tremor</li>
+                        <li data-i18n="tremor_list2">Parkinsonian Tremor</li>
+                        <li data-i18n="tremor_list3">Dystonic Tremor</li>
                     </ul>
                 </div>
                 <div class="glass-panel info-card">
                     <img src="assets/brain_signals.png" alt="Brain signals illustration">
-                    <h3>The Science Behind the Shake</h3>
+                    <h3 data-i18n="science_title">The Science Behind the Shake</h3>
                     <ul>
-                        <li>Neurological pathways</li>
-                        <li>Signal disruption</li>
-                        <li>Motor cortex activity</li>
+                        <li data-i18n="science_list1">Neurological pathways</li>
+                        <li data-i18n="science_list2">Signal disruption</li>
+                        <li data-i18n="science_list3">Motor cortex activity</li>
                     </ul>
                 </div>
                 <div class="glass-panel info-card">
                     <img src="assets/daily_life.png" alt="Managing daily life illustration">
-                    <h3>Managing Daily Life</h3>
+                    <h3 data-i18n="daily_title">Managing Daily Life</h3>
                     <ul>
-                        <li>Adaptive tools</li>
-                        <li>Stress management</li>
-                        <li>Physical therapy</li>
+                        <li data-i18n="daily_list1">Adaptive tools</li>
+                        <li data-i18n="daily_list2">Stress management</li>
+                        <li data-i18n="daily_list3">Physical therapy</li>
                     </ul>
                 </div>
             </div>
@@ -153,23 +437,24 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
+                    <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
                     <span style="margin: 0 1rem;">|</span>
-                    <a href="#">Contact Us</a>
+                    <a href="#" data-i18n="footer_contact">Contact Us</a>
                 </div>
                 <div class="newsletter-signup">
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Stay updated..." class="newsletter-input">
-                        <button type="submit" class="btn btn-primary" style="padding: 0.8rem 1.5rem;">Subscribe</button>
+                        <input type="email" placeholder="Stay updated..." class="newsletter-input"
+                            data-i18n="newsletter_placeholder">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.8rem 1.5rem;"
+                            n">Subscribe</button>
                     </form>
-                </div>
-                <div class="copyright">
-                    &copy; 2025 Futura Innovation Technologies
-                </div>
-            </div>
-        </div>
-    </footer>
+                    /div>
+                    lass="copyright"ata-i18n="copyright">
+                    &copy; 2025 ation Technologies
+                    </ </d </div>
+                    >
 
+                    ipt.js"></script>
 </body>
 
 </html>
