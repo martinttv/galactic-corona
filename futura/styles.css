@@ -9,7 +9,12 @@
     --color-text-muted: #a0a0a0;
     --color-accent: #e0e0e0;
     --font-main: 'Inter', sans-serif;
-    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Glassmorphism Variables */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-hover: rgba(255, 255, 255, 0.1);
+    --glass-border-color: rgba(255, 255, 255, 0.1);
+    --glass-border: 1px solid var(--glass-border-color);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
@@ -145,10 +150,10 @@ nav {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-border-color);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border-color);
 }
 
 .lang-btn {
@@ -235,7 +240,7 @@ nav {
 
 .progress-bar {
     height: 4px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-border-color);
     border-radius: 2px;
     margin-bottom: 2rem;
     position: relative;
@@ -261,8 +266,8 @@ nav {
 .survey-btn {
     flex: 1;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border-color);
     border-radius: 12px;
     color: white;
     cursor: pointer;
@@ -290,16 +295,6 @@ nav {
     box-shadow: 0 0 10px var(--color-primary);
 }
 
-/* Section 3: Education */
-.education-section {
-    padding: 6rem 0;
-}
-
-.info-grid {
-    display: grid;
-    color: var(--color-text-muted);
-}
-
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -314,14 +309,10 @@ nav {
 .newsletter-input {
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border-color);
+    background: var(--glass-bg);
     color: white;
     outline: none;
-}
-
-.newsletter-input:focus {
-    border-color: var(--color-primary);
 }
 
 /* Survey Form Styles */
@@ -347,8 +338,8 @@ nav {
 .form-textarea {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border-color);
     border-radius: 8px;
     color: white;
     font-family: var(--font-main);
@@ -357,6 +348,7 @@ nav {
     transition: border-color 0.3s;
 }
 
+.newsletter-input:focus,
 .form-input:focus,
 .form-textarea:focus {
     border-color: var(--color-primary);
@@ -376,7 +368,7 @@ nav {
     gap: 1rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-bg);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s;
