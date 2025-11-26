@@ -68,24 +68,14 @@ const translations = {
         q15_opt1: "Yes",
         q15_opt2: "No, I will need assistance",
         submit_btn: "Submit Survey",
-        resources_title: "UNDERSTANDING HAND TREMORS",
-        tremor_types: "Types of Tremors",
-        tremor_list1: "Essential Tremor",
-        tremor_list2: "Parkinsonian Tremor",
-        tremor_list3: "Dystonic Tremor",
-        science_title: "The Science Behind the Shake",
-        science_list1: "Neurological pathways",
-        science_list2: "Signal disruption",
-        science_list3: "Motor cortex activity",
-        daily_title: "Managing Daily Life",
-        daily_list1: "Adaptive tools",
-        daily_list2: "Stress management",
-        daily_list3: "Physical therapy",
+
         footer_privacy: "Privacy Policy",
         footer_contact: "Contact Us",
         newsletter_placeholder: "Stay updated...",
         newsletter_btn: "Subscribe",
-        copyright: "&copy; 2025 Futura Innovation Technologies"
+        copyright: "&copy; 2025 Futura Innovation Technologies",
+        survey_cta_text: "Do you want to join our survey?",
+        survey_cta_btn: "Join the Survey"
     },
     bg: {
         nav_tech: "Нашите Технологии",
@@ -156,24 +146,14 @@ const translations = {
         q15_opt1: "Да",
         q15_opt2: "Не, ще имам нужда от помощ",
         submit_btn: "Изпрати Анкетата",
-        resources_title: "РАЗБИРАНЕ НА ТРЕМОРА НА РЪЦЕТЕ",
-        tremor_types: "Видове Тремори",
-        tremor_list1: "Есенциален Тремор",
-        tremor_list2: "Паркинсонов Тремор",
-        tremor_list3: "Дистоничен Тремор",
-        science_title: "Науката Зад Треперенето",
-        science_list1: "Неврологични пътища",
-        science_list2: "Нарушение на сигнала",
-        science_list3: "Активност на моторния кортекс",
-        daily_title: "Управление на Ежедневието",
-        daily_list1: "Адаптивни инструменти",
-        daily_list2: "Управление на стреса",
-        daily_list3: "Физиотерапия",
+
         footer_privacy: "Политика за Поверителност",
         footer_contact: "Контакти",
         newsletter_placeholder: "Бъдете информирани...",
         newsletter_btn: "Абонирай се",
-        copyright: "&copy; 2025 Futura Innovation Technologies"
+        copyright: "&copy; 2025 Futura Innovation Technologies",
+        survey_cta_text: "Искате ли да се включите в нашата анкета?",
+        survey_cta_btn: "Включи се в анкетата"
     }
 };
 
@@ -197,3 +177,17 @@ function changeLanguage(lang) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const joinBtn = document.getElementById('join-survey-btn');
+    const ctaSection = document.getElementById('survey-cta');
+    const surveyContainer = document.getElementById('survey-container');
+
+    if (joinBtn && ctaSection && surveyContainer) {
+        joinBtn.addEventListener('click', () => {
+            ctaSection.style.display = 'none';
+            surveyContainer.style.display = 'block';
+            // Optional: scroll to the top of the form if needed, but since it replaces the CTA, it should be fine.
+        });
+    }
+});
