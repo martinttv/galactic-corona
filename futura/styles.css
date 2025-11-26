@@ -193,7 +193,7 @@ nav {
     right: 0;
     width: 60%;
     height: 100%;
-    background-image: url('assets/hero_wearable.png');
+    background-image: url('assets/hero_wearable_v5.jpg');
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to right, transparent, black 20%);
