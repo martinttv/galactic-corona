@@ -75,7 +75,26 @@ const translations = {
         newsletter_btn: "Subscribe",
         copyright: "&copy; 2025 Futura Innovation Technologies",
         survey_cta_text: "Do you want to join our survey?",
-        survey_cta_btn: "Join the Survey"
+        survey_cta_btn: "Join the Survey",
+
+        // Tremor Information Section
+        info_title: "Tremor Information & Resources",
+        types_title: "Common Types of Tremors",
+        type_et_title: "Essential Tremor (ET)",
+        type_et_desc: "The most common movement disorder. It typically occurs during action, such as eating, drinking, or writing. It often affects the hands but can also affect the head and voice.",
+        type_pt_title: "Parkinsonian Tremor",
+        type_pt_desc: "Often the first sign of Parkinson's disease. It is usually a \"resting tremor,\" meaning it occurs when the hands are relaxed and still. It often resembles a \"pill-rolling\" motion.",
+        type_dt_title: "Dystonic Tremor",
+        type_dt_desc: "Occurs in people with dystonia, a movement disorder where incorrect brain messages cause overactive muscles, abnormal postures, and sustained muscle contractions.",
+        type_ct_title: "Cerebellar Tremor",
+        type_ct_desc: "A slow, high-amplitude tremor of the extremities that occurs at the end of a purposeful movement (intention tremor), caused by damage to the cerebellum.",
+        facts_title: "Key Facts",
+        fact_1: "Tremor is the most common involuntary movement disorder.",
+        fact_2: "While most common in older adults, it can affect people of any age.",
+        fact_3: "Stress, anxiety, fatigue, and caffeine can temporarily worsen tremors.",
+        fact_4: "Tremors are not life-threatening but can significantly impact quality of life and daily independence.",
+        resources_title: "Trusted Resources",
+        resources_desc: "For more in-depth information and support, please visit these reputable organizations:"
     },
     bg: {
         nav_tech: "Нашите Технологии",
@@ -153,7 +172,26 @@ const translations = {
         newsletter_btn: "Абонирай се",
         copyright: "&copy; 2025 Futura Innovation Technologies",
         survey_cta_text: "Искате ли да се включите в нашата анкета?",
-        survey_cta_btn: "Включи се в анкетата"
+        survey_cta_btn: "Включи се в анкетата",
+
+        // Tremor Information Section
+        info_title: "Информация и Ресурси за Тремор",
+        types_title: "Често Срещани Видове Тремор",
+        type_et_title: "Есенциален Тремор (ET)",
+        type_et_desc: "Най-често срещаното двигателно разстройство. Обикновено се появява по време на действие, като хранене, пиене или писане. Често засяга ръцете, но може да засегне и главата и гласа.",
+        type_pt_title: "Паркинсонов Тремор",
+        type_pt_desc: "Често е първият признак на болестта на Паркинсон. Обикновено е \"тремор в покой\", което означава, че се появява, когато ръцете са отпуснати и неподвижни. Често прилича на движение на \"броене на пари\".",
+        type_dt_title: "Дистоничен Тремор",
+        type_dt_desc: "Появява се при хора с дистония, двигателно разстройство, при което неправилни мозъчни сигнали причиняват свръхактивни мускули, необичайни пози и продължителни мускулни контракции.",
+        type_ct_title: "Церебеларен Тремор",
+        type_ct_desc: "Бавен тремор с голяма амплитуда на крайниците, който се появява в края на целенасочено движение (интенционен тремор), причинен от увреждане на малкия мозък.",
+        facts_title: "Ключови Факти",
+        fact_1: "Треморът е най-често срещаното неволно двигателно разстройство.",
+        fact_2: "Въпреки че е най-често срещан при възрастни хора, той може да засегне хора от всяка възраст.",
+        fact_3: "Стресът, тревожността, умората и кофеинът могат временно да влошат тремора.",
+        fact_4: "Треморите не са животозастрашаващи, но могат значително да повлияят на качеството на живот и ежедневната независимост.",
+        resources_title: "Доверени Ресурси",
+        resources_desc: "За по-задълбочена информация и подкрепа, моля посетете тези реномирани организации:"
     }
 };
 
